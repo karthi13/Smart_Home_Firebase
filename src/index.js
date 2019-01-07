@@ -4,6 +4,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import { Provider,  } from 'react-redux';
 
 import '../node_modules/mdbreact/dist/css/mdb.css';
+import '../node_modules/video-react/dist/video-react.css'; 
+import '../node_modules/react-vis/dist/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
