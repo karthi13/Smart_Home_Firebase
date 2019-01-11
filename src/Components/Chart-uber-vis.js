@@ -12,9 +12,9 @@ class Chart extends Component {
     }
 
     render() {
-        console.log(this.props.data)
+        // console.log(this.props.data)
         const timestamp = new Date().getTime();
-        console.log(timestamp)
+        // console.log(timestamp)
         const MSEC_DAILY = 86400000;
         // console.log(this.props.chartData);
         const data = [

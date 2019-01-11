@@ -10,10 +10,18 @@ async function onSensorLoad()  {
     var date = new Date()
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
+    if(month < 10){
+        month = "0" + month;
+    }
+    if(date < 10){
+        date = "0" + date;
+    }
     var day = date.getDate();
     var timestamp = year + "-" + month + "-" + day;
-    // var dbRef = database.ref("thingy/e00f05209a35/"+ timestamp);
-    var dbRef = database.ref("thingy/f3d50ed48fd7/" + "2018-12-28");
+
+    console.log(timestamp,"timepstamp line");
+    var dbRef = database.ref("thingy/d271d77a7e4b/" + timestamp);
+    // var dbRef = database.ref("thingy/f3d50ed48fd7/" + "2018-12-28");
     var allDataRef = dbRef.once('value');
     console.log(allData);
     var currentDataRef = dbRef.limitToLast(1).once('value');

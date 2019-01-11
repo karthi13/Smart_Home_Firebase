@@ -43,7 +43,7 @@ class EnvironmentComponent extends Component {
                     humidity: res.data.currentData.humidity,
                     eco2: res.data.currentData.eco2
                 });
-            })
+        })
     }
 
 
@@ -58,7 +58,7 @@ class EnvironmentComponent extends Component {
                             <FontAwesomeIcon size='1x' icon={faThermometerHalf} fixedWidth={10} style={iconStyle} /> Temperature
                     </div>
                         <div className="row">
-                            <span style={{ marginLeft: 50 }}>{this.state.temperature}</span><span>&deg;C</span>
+                            <span style={{ marginLeft: 20 }}>{this.props.data.temperature}</span><span>&deg;C</span>
                         </div>
                     </div>
                     <div className="col-lg-3 col-sm-3 col-xs-3">
@@ -66,7 +66,7 @@ class EnvironmentComponent extends Component {
                             <FontAwesomeIcon size='1x' icon={faTachometerAlt} fixedWidth={10} style={iconStyle} /> Pressure
                     </div>
                         <div className="row">
-                            <span style={{ marginLeft: 35, marginRight: 5 }}>{this.state.pressure}</span><span> hPa</span>
+                            <span style={{ marginRight: 5 }}>{this.props.data.pressure}</span><span> hPa</span>
                         </div>
                     </div>
                     <div className="col-lg-3 col-sm-3 col-xs-3">
@@ -74,7 +74,7 @@ class EnvironmentComponent extends Component {
                             <img style={iconStyle} height={18} width={18} src={humidity} /> Humidity
                     </div>
                         <div className="row">
-                            <span style={{ marginLeft: 50, marginRight: 2 }}>{this.state.humidity}</span><span> &#37;</span>
+                            <span style={{ marginLeft: 20, marginRight: 2 }}>{this.props.data.humidity}</span><span> &#37;</span>
                         </div>
                     </div>
                     <div className="col-lg-3 col-sm-3 col-xs-3">
@@ -82,7 +82,7 @@ class EnvironmentComponent extends Component {
                             <img style={{ marginRight: 15 }} height={18} width={18} src={carbon} /> CO2
                     </div>
                         <div className="row">
-                            <span style={{ marginLeft: 25, marginRight: 2 }}>{this.state.eco2}</span><span> ppm</span>
+                            <span style={{ marginLeft: 7, marginRight: 2 }}>{this.props.data.eco2}</span><span> ppm</span>
                         </div>
                     </div>
                 </div>

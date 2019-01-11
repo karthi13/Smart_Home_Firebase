@@ -12,6 +12,7 @@ class RoomAppliancesComponent extends Component {
             hsApiPlugState: false,
             videoURL: undefined
         }
+        this.handleClick = this.handleClick.bind(this)
     }
 
     handleClick() {
@@ -25,13 +26,28 @@ class RoomAppliancesComponent extends Component {
             .then(res => {
                 console.log(res);
                 this.setState({ hsApiPlugState: res.data.plugStatus })
-            })
+            }).catch(error => console.log);
     }
 
     componentDidMount() {
+
+        // setInterval(()=>{
+        //     axios.get(process.env.REACT_APP_BACKEND_URL + 'getFirebaseVideoURL')
+        //     .then(res => {
+        //         // console.log(res);
+        //         this.setState({ videoURL: res.data.video_url })
+        //     })
+
+        // axios.get(process.env.REACT_APP_BACKEND_URL + 'getSmartPlugState')
+        //     .then(res => {
+        //         console.log(res);
+        //         this.setState({ hsApiPlugState: res.data.plugStatus })
+        //     })
+        // },5000)
+
         axios.get(process.env.REACT_APP_BACKEND_URL + 'getFirebaseVideoURL')
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 this.setState({ videoURL: res.data.video_url })
             })
 
@@ -45,8 +61,8 @@ class RoomAppliancesComponent extends Component {
 
     render() {
         console.log(this.state.hsApiPlugState)
-        const buttonColor = this.state.hsApiPlugState ? <MDBBtn onClick={this.handleClick} color="primary">Switch Off</MDBBtn> :
-            <MDBBtn onClick={this.handleClick} color="danger">Switch on</MDBBtn>;
+        const buttonColor = this.state.hsApiPlugState ? <MDBBtn onClick={this.handleClick} color="primary">Switch state</MDBBtn> :
+            <MDBBtn onClick={this.handleClick} color="danger">Switch state</MDBBtn>;
         return (
             <div className="card-env">
                 <div className="row">
